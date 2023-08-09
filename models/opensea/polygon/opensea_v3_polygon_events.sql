@@ -1,6 +1,6 @@
 {{ config(
     schema = 'opensea_v3_polygon',
-    alias = 'events',
+    alias = alias('events'),
     partition_by = ['block_date'],
     materialized = 'incremental',
     file_format = 'delta',
@@ -723,7 +723,6 @@ select  -- basic info
                                       ,'0x110b2b128a9ed1be5ef3232d8e4e41640df5c2cd'
                                       ,'0x000000e7ec00e7b300774b00001314b8610022b8' -- newly added on seaport v1.4
                                       )
-   and  (    fee_wallet_name = 'opensea'
-          or right_hash = '360c6ebe' -- opensea hash
-        )
- 
+  --  and  (    fee_wallet_name = 'opensea'
+  --         or right_hash = '360c6ebe' -- opensea hash
+  --       )

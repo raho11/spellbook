@@ -1,5 +1,5 @@
 {{ config(
-        alias ='flashloans',
+        alias = alias('flashloans'),
         materialized = 'incremental',
         file_format = 'delta',
         incremental_strategy = 'merge',
@@ -16,6 +16,11 @@ ref('aave_flashloans')
 , ref('balancer_flashloans')
 , ref('dydx_ethereum_flashloans')
 , ref('uniswap_flashloans')
+, ref('euler_ethereum_flashloans')
+, ref('maker_ethereum_flashloans')
+, ref('synapse_flashloans')
+, ref('fiat_dao_ethereum_flashloans')
+, ref('equalizer_flashloans')
 ] %}
 
 
